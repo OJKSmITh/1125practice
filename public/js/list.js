@@ -17,10 +17,10 @@ function template(item, index){
     return`
     <tr>
         <td>${index + 1}</td>
-        <td><a href="/board/view.html?index=${index}">${item.subject}</a></td>
+        <td><a href="/board/view.html?index=${index}">${item.item}</a></td>
         <td>${item.content}</td>
         <td>${item.date}</td>
-        <td>${item.hit}</td>
+        <td>${item.num}</td>
     </tr>
     `
 }
