@@ -20,3 +20,7 @@ for (let i = 0; i < viewFrm.length; i++) {
   const span = viewFrm[i].querySelector("span");
   span.innerHTML = board[id];
 }
+
+modifyBtn.addEventListener("click", function modifyHandler() {
+  location.href = `/board/modify.html?index=${index}`;
+});
