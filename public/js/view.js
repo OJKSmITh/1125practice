@@ -5,3 +5,18 @@ const item = localStorage.getItem("boards");
 // console.log(item); // 출력 결과가 string이기에 object로 형변환 후 해당 객체 안의 특정 값을 가져올 수 있음!!
 
 const boards = JSON.parse(item);
+
+const idx = location.search.split("="); // 데이터 타입이 string이다!! >> '?index=3' >> ['?index', '3']
+const index = idx[1];
+const board = boards[index];
+
+const viewFrm = document.querySelectorAll("#viewFrm > div");
+
+for (let i = 0; i < viewFrm.length; i++) {
+  const id = viewFrm[i].id; // element의 id 값('title')
+  // board[i] -> board['title']
+
+  // console.log("id", id, board[id]);
+  const span = viewFrm[i].querySelector("span");
+  span.innerHTML = board[id];
+}
