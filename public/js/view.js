@@ -36,3 +36,12 @@ function deleteHandler(e) {
 }
 
 deleteBtn.addEventListener("click", deleteHandler);
+
+let prevPage = document.referrer;
+
+if (prevPage.indexOf("list.html") !== -1) {
+  board.num += 1;
+
+  const viewNum = JSON.stringify(boards);
+  localStorage.setItem("boards", viewNum);
+}
