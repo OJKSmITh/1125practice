@@ -1,10 +1,14 @@
 let item = localStorage.getItem("boards")
 
-if(item === null) {
+function createintial(){
     const intialState = []
     const state = JSON.stringify(intialState)
     localStorage.setItem("boards", state)
     item = state
+}
+
+if(item === null) {
+    createintial()
 }
 
 const tbody = document.querySelector("tbody")
