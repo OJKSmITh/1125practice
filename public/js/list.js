@@ -6,3 +6,6 @@ if(item === null) {
     localStorage.setItem("boards", state)
     item = state
 }
+
+const tbody = document.querySelector("tbody")
+console.log(tbody)
