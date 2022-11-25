@@ -24,3 +24,15 @@ for (let i = 0; i < viewFrm.length; i++) {
 modifyBtn.addEventListener("click", function modifyHandler() {
   location.href = `/board/modify.html?index=${index}`;
 });
+
+function deleteHandler(e) {
+  if (confirm("정말 삭제하시겠습니까?") === true) {
+    boards.splice(index, 1);
+
+    const data = JSON.stringify(boards);
+    localStorage.setItem("boards", data);
+    location.href = "/board/list.html";
+  }
+}
+
+deleteBtn.addEventListener("click", deleteHandler);
